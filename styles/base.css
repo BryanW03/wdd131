@@ -158,7 +158,7 @@ main {
     max-width: 250px; /* Ajustar tamaño máximo */
     border: 1px solid #ddd;
     border-radius: 4px;
-    margin-bottom: 5px; /* Espacio antes del figcaption */
+    margin-top: 85px;    
 }
 
 .card-about figcaption {
@@ -171,8 +171,8 @@ main {
     grid-area: text country;
     text-align: left; /* Alineado a la izquierda */
     line-height: 1.6;
-    margin-right: 50px;
-    ;
+    margin-right: 65px;
+    margin-top: 35px;
 }
 /* Estilos para la tarjeta "Country" */
 .card-country {
@@ -300,6 +300,7 @@ figcaption {
     font-size: 14px;
     color: #666;
     font-style: italic;
+    margin-bottom: 100px;
  
    
   }
