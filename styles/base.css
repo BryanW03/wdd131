@@ -11,39 +11,38 @@ body{
     background-image: linear-gradient(135deg, #6B7B8C 0%, #A3B0C3 50%, #4A5568 100%);
 }
 
-
 header{
  font-family: "Limelight", sans-serif;
  font-weight: 400;
  font-style: normal;
  grid-column: 1/4;
-
 }
 
 header h1 {
     background-color: #4A6FA5;
-	padding: 1rem;
-	border: 1px solid rgb(0 0 0 / 10%);
-	font-size: 2rem;
-	text-align: center;
+    padding: 1rem;
+    border: 1px solid rgb(0 0 0 / 10%);
+    font-size: 2rem;
+    text-align: center;
 }
 
 nav{
     background-color: #36454f;
-	margin: 0 auto;
-	width: 100%;
+    margin: 0 auto;
+    width: 100%;
 }
 
 nav ul {
-	list-style-type: none;}
+    list-style-type: none;
+}
 
-    nav a {
-        display: block;
-        color: #fff;
-        text-align: center;
-        padding: 1rem;
-        text-decoration: none;
-    }
+nav a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+}
 
 nav a:hover{
     border: 1px solid #fff;
@@ -54,7 +53,6 @@ nav ul{
     justify-content: space-evenly;
 }
 
-/* Estilos generales para el cuerpo y el contenedor principal */
 body {
     font-family: sans-serif;
     margin: 0;
@@ -64,7 +62,7 @@ body {
 
 main {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* Dos columnas, la primera más ancha */
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr auto;
     gap: 20px;
     padding: 20px;
@@ -72,10 +70,9 @@ main {
     margin: 20px auto;
 }
 
-/* Estilos para la tarjeta "About me" */
 .card-about {
     background-color: white;
-    padding: 20px; /* Este padding es importante para los márgenes negativos del h1 */
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: grid;
@@ -85,35 +82,31 @@ main {
         "subtitle-country subtitle-country"
         "image-country image-country"
         "text-country text-country";
-    grid-template-columns: 1fr 1fr; /* Dos columnas internas de igual tamaño */
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
     align-items: start;
-    overflow: hidden; /* Para que los bordes redondeados del h1 se vean bien con el card */
+    overflow: hidden;
 }
 
 .card-about h1 {
     grid-area: header;
-    background-color: #2c5282; /* Azul oscuro, como en el ejemplo */
-    color: white;               /* Texto blanco */
-    padding: 15px 20px;         /* Padding interno para la barra azul */
-    margin-top: -20px;          /* Compensa el padding superior de .card-about */
-    margin-left: -20px;         /* Extiende el fondo al borde izquierdo de .card-about */
-    margin-right: -20px;        /* Extiende el fondo al borde derecho de .card-about */
-    text-align: center;         /* Centra el texto */
-    font-size: 1.8em;           /* Tamaño de fuente más grande */
-    border-top-left-radius: 8px; /* Redondea esquina superior izquierda */
-    border-top-right-radius: 8px;/* Redondea esquina superior derecha */
-    /* Aseguramos que no haya margen inferior extra que pueda afectar el layout de grid */
+    background-color: #2c5282;
+    color: white;
+    padding: 15px 20px;
+    margin-top: -20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    text-align: center;
+    font-size: 1.8em;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     margin-bottom: 0;
 }
 
-.card-about p:nth-of-type(1) { /* Primer párrafo */
+.card-about p:nth-of-type(1) {
     grid-area: text-main;
-    /* Para centrarlo verticalmente con la imagen, usaremos align-self en su celda de grid */
-    align-self: center; /* Alinea este elemento específico al centro de su celda de grid */
-    /* Puedes añadir un padding-top si necesitas bajarlo un poco más aún después de centrarlo */
-    /* padding-top: 10px; */ /* Descomenta y ajusta si es necesario */
-    line-height: 1.6; /* Mejora la legibilidad */
+    align-self: center;
+    line-height: 1.6;
 }
 
 .profile-image {
@@ -122,7 +115,7 @@ main {
     max-width: 180px;
     border-radius: 50%;
     justify-self: center;
-    align-self: center; /* Aseguramos que la imagen también esté centrada en su celda */
+    align-self: center;
     border: 3px solid #eee;
 }
 
@@ -132,30 +125,24 @@ main {
     color: #4a4a4a;
     text-align: center;
     grid-column: 1 / -1;
-    /* Para el subrayado */
-    padding-bottom: 8px; /* Espacio entre el texto y la línea */
-    border-bottom: 2px solid #2c5282; /* Color y grosor de la línea, usando el mismo azul del h1 */
-    display: inline-block; /* Para que el borde solo ocupe el ancho del texto si no está en una celda completa */
-    /* Si quieres que la línea ocupe todo el ancho de la celda del grid,
-       asegúrate que el h2 (o su contenedor de grid) se expande.
-       Con grid-column: 1 / -1; y text-align: center;, el display: inline-block;
-       hará que el subrayado se ajuste al texto. Si quieres el subrayado completo,
-       quita display: inline-block y asegúrate que el h2 es un elemento de bloque. */
-    justify-self: center; /* Centra el h2 (y su subrayado) en la celda del grid */
+    padding-bottom: 8px;
+    border-bottom: 2px solid #2c5282;
+    display: inline-block;
+    justify-self: center;
 }
 
 .card-about figure {
     grid-area: image-country;
-    margin: 0 auto; /* Centrar la figura */
+    margin: 0 auto;
     text-align: center;
 }
 
 .country {
     width: 100%;
-    max-width: 250px; /* Ajustar tamaño máximo */
+    max-width: 250px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    margin-top: 85px;    
+    margin-top: 85px;
 }
 
 .card-about figcaption {
@@ -164,34 +151,32 @@ main {
     margin-top: 5px;
 }
 
-.card-about .pp { /* Segundo párrafo */
-    text-align: left; /* Alineado a la izquierda */
+.card-about .pp {
+    text-align: left;
     line-height: 1.6;
     margin-right: 65px;
     margin-top: 35px;
 }
-/* Estilos para la tarjeta "Country" */
+
 .card-country {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
 }
 
 .card-country h2 {
     grid-area: header;
-    background-color: #2c5282; /* Azul oscuro, como en el ejemplo */
-    color: white;               /* Texto blanco */
-    padding: 15px 20px;         /* Padding interno para la barra azul */
-    margin-top: -20px;          /* Compensa el padding superior de .card-about */
-    margin-left: -20px;         /* Extiende el fondo al borde izquierdo de .card-about */
-    margin-right: -20px;        /* Extiende el fondo al borde derecho de .card-about */
-    text-align: center;         /* Centra el texto */
-    font-size: 1.8em;           /* Tamaño de fuente más grande */
-    border-top-left-radius: 8px; /* Redondea esquina superior izquierda */
-    border-top-right-radius: 8px;/* Redondea esquina superior derecha */
-    /* Aseguramos que no haya margen inferior extra que pueda afectar el layout de grid */
+    background-color: #2c5282;
+    color: white;
+    padding: 15px 20px;
+    margin-top: -20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    text-align: center;
+    font-size: 1.8em;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     margin-bottom: 0;
 }
 
@@ -200,58 +185,54 @@ main {
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
-    width: 300px; /* Adjust width as needed */
-    display: grid; /* Enable CSS Grid for the card */
-    grid-template-rows: auto 1fr; /* Define two rows: one for the title (auto height), and one for the list (takes remaining space) */
-    justify-items: center; /* Center items horizontally within their grid cells */
-    align-items: start; /* Align items vertically to the start of their grid cells (title at the top, list starting below) */
+    width: 300px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    justify-items: center;
+    align-items: start;
 }
 
 .card h2 {
-    background-color: #2c3e50; /* Dark blue background */
+    background-color: #2c3e50;
     color: white;
-    padding: 10px 20px; /* Add horizontal padding for better centering */
+    padding: 10px 20px;
     margin-top: 0;
-    border-radius: 5px; /* Apply border-radius to all corners for the title */
-    text-align: center; /* Ensure text inside the title is centered */
+    border-radius: 5px;
+    text-align: center;
     font-size: 1.2em;
-    width: 100%; /* Make the title span the full width of its grid cell */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    width: 100%;
+    box-sizing: border-box;
 }
 
+.card-country ul {
+    display: grid;
+    list-style: disc;
+    padding: 0;
+    margin: 0;
+    margin-top: 125px;
+}
 
-.card-country ul {  
-    display: grid;  
-    list-style: disc;  
-    padding: 0;  
-    margin: 0;  
-  margin-top: 125px;
-  }  
-    
-  .card-country ul li a {  
-    display: block;  
-    padding: .5rem;  
-    background: #f5f5f5;  
-    text-decoration: none;  
-    color: #333;  
-    border-radius: 4px;  
-    transition: background .2s;  
-  }  
-    
-  .card-country ul li a:hover {  
-    background: #e0e0e0;  
-  }  
+.card-country ul li a {
+    display: block;
+    padding: .5rem;
+    background: #f5f5f5;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    transition: background .2s;
+}
 
+.card-country ul li a:hover {
+    background: #e0e0e0;
+}
 
-
-/* Media Queries para responsividad */
 @media (max-width: 768px) {
     main {
-        grid-template-columns: 1fr; /* Una sola columna */
+        grid-template-columns: 1fr;
     }
 
     .card-about {
-        padding: 15px; /* Reducir padding en móviles */
+        padding: 15px;
         grid-template-areas:
             "header"
             "image-profile"
@@ -259,26 +240,26 @@ main {
             "subtitle-country"
             "image-country"
             "text-country";
-        grid-template-columns: 1fr; /* Una sola columna interna */
+        grid-template-columns: 1fr;
         text-align: center;
     }
 
     .card-about h1 {
-        margin-top: -15px; /* Ajustar al nuevo padding de .card-about */
-        margin-left: -15px; /* Ajustar al nuevo padding de .card-about */
-        margin-right: -15px;/* Ajustar al nuevo padding de .card-about */
+        margin-top: -15px;
+        margin-left: -15px;
+        margin-right: -15px;
         font-size: 1.6em;
         padding: 12px 15px;
     }
 
     .profile-image {
-        max-width: 150px; /* Más pequeña en móviles */
+        max-width: 150px;
         margin-bottom: 15px;
     }
 
     .card-about p:nth-of-type(1),
     .card-about .pp {
-        text-align: left; /* Alinear a la izquierda para mejor lectura en móviles */
+        text-align: left;
     }
 
     .card-about h2 {
@@ -289,7 +270,6 @@ main {
         max-width: 200px;
     }
 }
-
 
 .card-about figure {
     grid-area: image-country;
@@ -306,16 +286,9 @@ main {
     margin-top: 5px;
 }
 
-
-
-
 footer {
     background: wheat;
     padding: 2rem;
     text-align: center;
     grid-column: 1 / 4;
-  }
-
-
-
-  
+}
