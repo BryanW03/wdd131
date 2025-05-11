@@ -103,7 +103,7 @@ nav.main-nav ul li a:hover {
     text-decoration: none;
 }
 
-/* --- Contenido Principal (Main) --- */
+
 main {
     display: grid;
     grid-template-columns: 1fr;
@@ -113,7 +113,7 @@ main {
     padding: 1rem;
 }
 
-main > h1 {
+main > h2 {
     text-align: center;
     font-size: 2.2em;
     color: var(--primary-color);
