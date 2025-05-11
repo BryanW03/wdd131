@@ -1,6 +1,6 @@
-/* temples.css - Estilos Mobile First */
 
-/* --- Variables CSS --- */
+
+
 :root {
     --primary-color: #333366;
     --secondary-color: #FFFFFF;
@@ -11,9 +11,9 @@
     --font-heading: 'Playfair Display', serif;
     --nav-hover-bg: #5577AA;
     --link-color: #4477AA;
-    --hamburger-color: #FFFFFF; /* Color del icono de hamburguesa */
+    --hamburger-color: #FFFFFF; 
 }
-/* --- Estilos Generales --- */
+
 body {
     font-family: var(--font-body);
     margin: 0;
@@ -43,7 +43,7 @@ img {
     display: block;
 }
 
-/* --- Encabezado (Header) --- */
+
 header {
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -52,7 +52,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    position: relative; /* Necesario para posicionar el botón de hamburguesa */
+    position: relative; 
 }
 
 header h1 {
@@ -68,19 +68,19 @@ nav.main-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: none; /* Oculto por defecto en móvil */
-    flex-direction: column; /* Apila los elementos en móvil */
+    display: none; 
+    flex-direction: column; 
     position: absolute;
-    top: 100%; /* Coloca el menú debajo del header */
+    top: 100%; 
     left: 0;
     width: 100%;
     background-color: var(--primary-color);
-    z-index: 10; /* Asegura que esté por encima del contenido */
+    z-index: 10; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 nav.main-nav ul.open {
-    display: flex; /* Muestra el menú cuando la clase 'open' está presente */
+    display: flex; 
 }
 
 nav.main-nav ul li {
@@ -121,7 +121,7 @@ main > h1 {
 
 }
 
-/* --- Figuras (Figure elements) --- */
+
 figure {
     background-color: var(--figure-bg-color);
     margin: 0;
@@ -144,7 +144,7 @@ figcaption {
     font-style: italic;
 }
 
-/* --- Pie de Página (Footer) --- */
+
 footer {
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -154,37 +154,37 @@ footer {
     font-size: 0.9em;
 }
 
-/* --- Hamburger Menu --- */
+
 #hamburger-button {
-    display: block; /* Visible en mobile */
+    display: block; 
     background: none;
     border: none;
     font-size: 2rem;
-    color: var(--hamburger-color); /* Usa la variable de color */
+    color: var(--hamburger-color); 
     cursor: pointer;
-    position: absolute; /* Posicionado con respecto al header */
-    top: 0.75rem; /* Ajusta la posición vertical */
-    right: 1rem; /* Ajusta la posición horizontal */
-    z-index: 100; /* Asegura que esté por encima de otros elementos */
+    position: absolute; 
+    top: 0.75rem; 
+    right: 1rem; 
+    z-index: 100; 
 }
 
-/* Oculta la navegación por defecto en mobile */
+
 header nav.main-nav ul {
     display: none;
 }
 
-/* Muestra la navegación cuando la clase 'open' está presente */
+
 header nav.main-nav ul.open {
     display: flex;
 }
 
 
-/* --- Media Query for Mobile View (Opcional: Ajustes Finos) --- */
+
 @media (max-width: 768px) {
-    /* Aquí puedes añadir estilos específicos para mobile si lo necesitas */
+
     header h1 {
-        font-size: 1.6em; /* Reduce un poco el tamaño del título en móvil si es necesario */
-        margin-right: 40px; /* Espacio para el botón de hamburguesa */
+        font-size: 1.6em; 
+        margin-right: 40px; 
     }
 }
 

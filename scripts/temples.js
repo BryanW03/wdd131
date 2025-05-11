@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Footer: Copyright Year and Last Modified Date
+
     const currentYearSpan = document.getElementById('currentyear');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
@@ -10,31 +10,29 @@ document.addEventListener('DOMContentLoaded', function () {
         lastModifiedParagraph.textContent = `Last Modified: ${document.lastModified}`;
     }
 
-    // Hamburger Menu Functionality
     const header = document.querySelector('header');
-    const nav = document.querySelector('header nav.main-nav'); // Selección específica con la clase
-    const navUl = document.querySelector('header nav.main-nav ul'); // Selección específica con la clase
+    const nav = document.querySelector('header nav.main-nav'); 
+    const navUl = document.querySelector('header nav.main-nav ul'); 
 
     if (header && nav && navUl) {
-        // Create hamburger button
+      
         const hamburgerButton = document.createElement('button');
-        hamburgerButton.innerHTML = '&#9776;'; // Hamburger icon (☰)
+        hamburgerButton.innerHTML = '&#9776;'; 
         hamburgerButton.id = 'hamburger-button';
-        header.insertBefore(hamburgerButton, nav); // Add button before the nav
+        header.insertBefore(hamburgerButton, nav); 
 
-        // Toggle navigation visibility
+        
         hamburgerButton.addEventListener('click', () => {
             navUl.classList.toggle('open');
-            // Change button icon based on menu state
+          
             if (navUl.classList.contains('open')) {
-                hamburgerButton.innerHTML = '&times;'; // 'X' icon
+                hamburgerButton.innerHTML = '&times;'; 
             } else {
-                hamburgerButton.innerHTML = '&#9776;'; // Hamburger icon (☰)
+                hamburgerButton.innerHTML = '&#9776;'; 
             }
         });
 
-        // Hide nav ul by default on small screens (CSS will handle this better)
-        // but we ensure it's closed initially if JS is active
+       
         navUl.classList.remove('open');
 
     } else {

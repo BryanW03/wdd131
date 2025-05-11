@@ -1,8 +1,8 @@
 
 
-@media (min-width: 768px) { /* Punto de quiebre para tabletas y escritorios */
+@media (min-width: 768px) { 
 
-    /* --- Encabezado (Header) --- */
+
     header {
         padding: 1rem 2rem;
         flex-wrap: nowrap;
@@ -13,15 +13,15 @@
         margin-bottom: 0;
     }
 
-    /* --- Navegación (Nav) --- */
+
     nav.main-nav {
-        display: block; /* Asegura que el nav esté visible */
-        position: static; /* Restablece la posición para el layout de escritorio */
+        display: block; 
+        position: static; 
         width: auto;
     }
 
     nav.main-nav ul {
-        display: flex !important; /* Muestra los items horizontalmente */
+        display: flex !important; 
         flex-direction: row !important;
         position: static;
         background-color: transparent !important;
@@ -38,7 +38,7 @@
         display: block;
     }
 
-    /* --- Contenido Principal (Main) y Grid de Figuras --- */
+
     main {
         padding: 1.5rem 2rem;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -50,7 +50,7 @@
         font-size: 2.8em;
     }
 
-    /* --- Figuras (Figure elements) --- */
+
     figure {
         padding: 1.25rem;
     }
@@ -59,26 +59,17 @@
         font-size: 1em;
     }
 
-    /* --- Pie de Página (Footer) --- */
     footer {
         padding: 2rem 1rem;
     }
 
-    /* --- Oculta el botón de hamburguesa en pantallas grandes --- */
+
     #hamburger-button {
         display: none !important;
     }
 }
 
-/* Opcional: Un punto de quiebre para pantallas aún más grandes si quieres forzar 3 columnas exactas */
+
 @media (min-width: 1024px) {
-    /* Si quieres garantizar 3 columnas y sabes que el contenido encaja bien: */
-    /* main {
-        grid-template-columns: repeat(3, 1fr);
-    } */
-    /* Sin embargo, repeat(auto-fit, minmax(300px, 1fr)) ya debería lograr
-       3 columnas en la mayoría de los escritorios si el ancho de 'main' lo permite.
-       Por ejemplo, si 'main' tiene un max-width de 1200px, y cada item es ~300-350px,
-       3 columnas cabrán bien.
-    */
+   
 }
