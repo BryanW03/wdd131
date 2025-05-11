@@ -1,4 +1,4 @@
-/* temples-large.css - Estilos para Vistas Más Grandes */
+
 
 @media (min-width: 768px) { /* Punto de quiebre para tabletas y escritorios */
 
@@ -72,7 +72,7 @@
 
 /* Ensure hamburger is hidden on large screens */
 #hamburger-button {
-    display: none !important; /* Use !important if necessary to override */
+    display: none !important; 
 }
 
 /* Ensure nav ul is displayed as intended on large screens */

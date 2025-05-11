@@ -7,11 +7,10 @@
     --accent-color: #6699CC; /* Azul más claro para acentos y hovers */
     --text-color-dark: #222222; /* Color de texto principal oscuro */
     --text-color-light: #FFFFFF; /* Color de texto claro */
-    --figure-bg-color: #FFFFFF; /* Fondo blanco para las tarjetas de fotos, resaltando las imágenes */
-    --font-heading: 'Playfair Display', serif; /* Fuente elegante para encabezados */
-    --font-body: 'Merriweather', serif; /* Fuente legible y con estilo para el cuerpo del texto */
-    --nav-hover-bg: #5577AA; /* Azul un poco más claro para hover en navegación */
-    --link-color: #4477AA; /* Color para enlaces generales */
+    --figure-bg-color: #FFFFFF; 
+    --font-heading: 'Playfair Display', serif; 
+    --nav-hover-bg: #5577AA; 
+    --link-color: #4477AA; 
 }
 /* --- Estilos Generales --- */
 body {
