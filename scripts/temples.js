@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', function () {
     // Footer: Copyright Year and Last Modified Date
     const currentYearSpan = document.getElementById('currentyear');
@@ -14,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Hamburger Menu Functionality
     const header = document.querySelector('header');
-    const nav = document.querySelector('header nav');
-    const navUl = document.querySelector('header nav ul');
+    const nav = document.querySelector('header nav.main-nav'); // Selección específica con la clase
+    const navUl = document.querySelector('header nav.main-nav ul'); // Selección específica con la clase
 
     if (header && nav && navUl) {
         // Create hamburger button

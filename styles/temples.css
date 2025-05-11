@@ -2,15 +2,16 @@
 
 /* --- Variables CSS --- */
 :root {
-    --primary-color: #333366; /* Azul oscuro elegante para el tema principal */
-    --secondary-color: #FFFFFF; /* Blanco para texto sobre el primario */
-    --accent-color: #6699CC; /* Azul más claro para acentos y hovers */
-    --text-color-dark: #222222; /* Color de texto principal oscuro */
-    --text-color-light: #FFFFFF; /* Color de texto claro */
-    --figure-bg-color: #FFFFFF; 
-    --font-heading: 'Playfair Display', serif; 
-    --nav-hover-bg: #5577AA; 
-    --link-color: #4477AA; 
+    --primary-color: #333366;
+    --secondary-color: #FFFFFF;
+    --accent-color: #6699CC;
+    --text-color-dark: #222222;
+    --text-color-light: #FFFFFF;
+    --figure-bg-color: #FFFFFF;
+    --font-heading: 'Playfair Display', serif;
+    --nav-hover-bg: #5577AA;
+    --link-color: #4477AA;
+    --hamburger-color: #FFFFFF; /* Color del icono de hamburguesa */
 }
 /* --- Estilos Generales --- */
 body {
@@ -24,7 +25,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    color: var(--primary-color); /* Color por defecto para encabezados */
+    color: var(--primary-color);
 }
 
 a {
@@ -39,7 +40,7 @@ a:hover {
 img {
     max-width: 100%;
     height: auto;
-    display: block; /* Elimina espacio extra debajo de la imagen */
+    display: block;
 }
 
 /* --- Encabezado (Header) --- */
@@ -48,83 +49,93 @@ header {
     color: var(--secondary-color);
     padding: 1rem;
     display: flex;
-    flex-wrap: wrap; /* Permite que el título y la navegación se envuelvan si no caben */
-    justify-content: space-between; /* Título a la izquierda, navegación a la derecha */
-    align-items: center; /* Centra verticalmente los elementos del encabezado */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Necesario para posicionar el botón de hamburguesa */
 }
 
-header h1 { /* Título "Temple Album" */
+header h1 {
     color: var(--secondary-color);
     margin: 0;
-    font-size: 1.8em; /* Tamaño de fuente para móviles */
-    margin-right: 1rem; /* Espacio entre el título y la navegación si están en la misma línea */
-    margin-bottom: 0.5rem; /* Espacio si la navegación se envuelve debajo del título */
+    font-size: 1.8em;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 
-nav ul {
+nav.main-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-wrap: wrap; /* Permite que los elementos de navegación se envuelvan */
-    justify-content: flex-end; /* Alinea los items de navegación a la derecha del contenedor nav */
+    display: none; /* Oculto por defecto en móvil */
+    flex-direction: column; /* Apila los elementos en móvil */
+    position: absolute;
+    top: 100%; /* Coloca el menú debajo del header */
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    z-index: 10; /* Asegura que esté por encima del contenido */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-nav ul li {
-    margin: 0.2rem; /* Pequeño margen entre elementos de navegación */
+nav.main-nav ul.open {
+    display: flex; /* Muestra el menú cuando la clase 'open' está presente */
 }
 
-nav ul li a {
+nav.main-nav ul li {
+    margin: 0;
+    width: 100%;
+}
+
+nav.main-nav ul li a {
     color: var(--secondary-color);
-    padding: 0.5rem 0.75rem; /* Espaciado para facilitar el toque */
+    padding: 0.75rem 1rem;
     display: block;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    white-space: nowrap; /* Evita que el texto del enlace se rompa en varias líneas */
     text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
 }
 
-nav ul li a:hover {
+nav.main-nav ul li a:hover {
     background-color: var(--nav-hover-bg);
     color: var(--text-color-light);
-    text-decoration: none; /* Quita el subrayado en el hover específico de la navegación */
+    text-decoration: none;
 }
 
 /* --- Contenido Principal (Main) --- */
 main {
-    display: grid; /* Habilita CSS Grid para el main */
-    grid-template-columns: 1fr; /* Una sola columna para la vista móvil (el H1 y cada figure ocuparán una fila) */
-    gap: 1.5rem; /* Espacio entre los elementos del grid (H1 y figures) */
-    max-width: 1200px; /* Ancho máximo para el contenido */
-    margin: 1rem auto; /* Centrado horizontalmente con margen superior/inferior */
-    padding: 1rem; /* Espaciado interno */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 1rem;
 }
 
-main > h1 { /* Título "Home" dentro de main */
-    /* Al ser un item del grid, ocupará el ancho de la columna (1fr) */
+main > h1 {
     text-align: center;
     font-size: 2.2em;
     color: var(--primary-color);
    text-decoration: underline;
-  
+
 }
 
 /* --- Figuras (Figure elements) --- */
 figure {
     background-color: var(--figure-bg-color);
-    margin: 0; /* Resetea el margen por defecto de figure */
+    margin: 0;
     padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center; /* Centra el texto del figcaption */
+    text-align: center;
 }
 
 figure img {
-    border-radius: 4px; /* Bordes ligeramente redondeados para las imágenes */
-    margin-bottom: 0.75rem; /* Espacio entre la imagen y el pie de foto */
-    width: 100%; /* Asegura que la imagen ocupe el ancho de la figura */
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+    width: 100%;
 }
 
 figcaption {
@@ -139,92 +150,43 @@ footer {
     color: var(--secondary-color);
     text-align: center;
     padding: 1.5rem 1rem;
-    margin-top: 2rem; /* Espacio por encima del pie de página */
+    margin-top: 2rem;
     font-size: 0.9em;
 }
 
 /* --- Hamburger Menu --- */
 #hamburger-button {
-    display: none; /* Hidden by default, shown in mobile view */
+    display: block; /* Visible en mobile */
     background: none;
     border: none;
-    font-size: 2rem; /* Adjust size as needed */
-    color: #333; /* Adjust color to match your design */
+    font-size: 2rem;
+    color: var(--hamburger-color); /* Usa la variable de color */
     cursor: pointer;
-    position: absolute; /* Or relative to header, depending on layout */
-    top: 20px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
-    z-index: 1001; /* Ensure it's above other elements */
+    position: absolute; /* Posicionado con respecto al header */
+    top: 0.75rem; /* Ajusta la posición vertical */
+    right: 1rem; /* Ajusta la posición horizontal */
+    z-index: 100; /* Asegura que esté por encima de otros elementos */
 }
 
-/* --- Navigation adjustments for mobile --- */
-header nav ul {
-    display: flex; /* Keeps your desktop layout */
-    flex-direction: row;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* Oculta la navegación por defecto en mobile */
+header nav.main-nav ul {
+    display: none;
 }
 
-header nav ul li {
-    margin-right: 20px; /* Your existing spacing */
-}
-
-header nav ul li:last-child {
-    margin-right: 0;
-}
-
-/* Styles for when the menu is open on mobile */
-header nav ul.open {
+/* Muestra la navegación cuando la clase 'open' está presente */
+header nav.main-nav ul.open {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Center items when stacked */
-    position: absolute;
-    top: 60px; /* Adjust based on header height */
-    left: 0;
-    width: 100%;
-    background-color: #f8f8f8; /* Example background, change as needed */
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 1000;
-}
-
-header nav ul.open li {
-    margin: 10px 0; /* Spacing for stacked items */
-    width: 100%;
-    text-align: center;
-}
-
-header nav ul.open li a {
-    display: block;
-    padding: 10px;
 }
 
 
-/* --- Media Query for Mobile View --- */
-/* Adjust the max-width as per your definition of "mobile view" */
-/* This breakpoint should ideally match the one used for temples-large.css */
-@media (max-width: 768px) { /* Example breakpoint */
-    #hamburger-button {
-        display: block; /* Show hamburger button */
-    }
-
-    header nav ul {
-        display: none; /* Hide the nav list by default on mobile */
-        /* Further styling for when it's 'open' is handled by the .open class */
-    }
-
-    header nav ul.open {
-        display: flex; /* This will be toggled by JavaScript */
-    }
-
-    /* Optional: If your H1 is taking up too much space next to the button */
-    header H1 {
-        font-size: 1.5rem; /* Adjust as needed */
-        margin-right: 50px; /* Make space for the hamburger */
+/* --- Media Query for Mobile View (Opcional: Ajustes Finos) --- */
+@media (max-width: 768px) {
+    /* Aquí puedes añadir estilos específicos para mobile si lo necesitas */
+    header h1 {
+        font-size: 1.6em; /* Reduce un poco el tamaño del título en móvil si es necesario */
+        margin-right: 40px; /* Espacio para el botón de hamburguesa */
     }
 }
-
 
 footer p {
     margin: 0.3rem 0;

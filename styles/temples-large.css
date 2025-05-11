@@ -4,54 +4,69 @@
 
     /* --- Encabezado (Header) --- */
     header {
-        padding: 1rem 2rem; /* Más padding en pantallas grandes */
-        flex-wrap: nowrap; /* Evita el wrap del título y nav en pantallas grandes */
+        padding: 1rem 2rem;
+        flex-wrap: nowrap;
     }
 
-    header h1 { /* Título "Temple Album" */
-        font-size: 2.2em; /* Tamaño de fuente ligeramente mayor */
-        margin-bottom: 0; /* Asegura que no haya margen inferior si está en la misma línea que nav */
+    header h1 {
+        font-size: 2.2em;
+        margin-bottom: 0;
     }
 
     /* --- Navegación (Nav) --- */
-    nav ul {
-        flex-wrap: nowrap; /* Evita que los elementos de navegación se envuelvan */
+    nav.main-nav {
+        display: block; /* Asegura que el nav esté visible */
+        position: static; /* Restablece la posición para el layout de escritorio */
+        width: auto;
     }
 
-    nav ul li {
-        margin: 0 0.5rem; /* Espaciado horizontal entre elementos de navegación */
+    nav.main-nav ul {
+        display: flex !important; /* Muestra los items horizontalmente */
+        flex-direction: row !important;
+        position: static;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        width: auto;
     }
 
-    nav ul li a {
-        padding: 0.6rem 1rem; /* Padding un poco más grande para los enlaces */
+    nav.main-nav ul li {
+        margin: 0 0.5rem;
+    }
+
+    nav.main-nav ul li a {
+        padding: 0.6rem 1rem;
+        display: block;
     }
 
     /* --- Contenido Principal (Main) y Grid de Figuras --- */
     main {
-        padding: 1.5rem 2rem; /* Más padding para el contenido principal */
-        /* Cambia a múltiples columnas. auto-fit crea tantas columnas como quepan con un mínimo de 300px */
+        padding: 1.5rem 2rem;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem; /* Espacio mayor entre las figuras */
+        gap: 2rem;
     }
 
-    main > h1 { /* Título "Home" dentro de main */
-        grid-column: 1 / -1; /* Hace que el H1 ocupe todas las columnas del grid */
-        font-size: 2.8em; /* Título más grande */
-        /* El gap del grid maneja el espaciado vertical entre el H1 y las figuras */
+    main > h1 {
+        grid-column: 1 / -1;
+        font-size: 2.8em;
     }
 
     /* --- Figuras (Figure elements) --- */
     figure {
-        padding: 1.25rem; /* Un poco más de padding interno para las figuras */
+        padding: 1.25rem;
     }
 
     figcaption {
-        font-size: 1em; /* Texto del pie de foto ligeramente más grande */
+        font-size: 1em;
     }
 
     /* --- Pie de Página (Footer) --- */
     footer {
-        padding: 2rem 1rem; /* Más padding para el pie de página */
+        padding: 2rem 1rem;
+    }
+
+    /* --- Oculta el botón de hamburguesa en pantallas grandes --- */
+    #hamburger-button {
+        display: none !important;
     }
 }
 
@@ -59,36 +74,11 @@
 @media (min-width: 1024px) {
     /* Si quieres garantizar 3 columnas y sabes que el contenido encaja bien: */
     /* main {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     } */
     /* Sin embargo, repeat(auto-fit, minmax(300px, 1fr)) ya debería lograr
-       3 columnas en la mayoría de los escritorios si el ancho de 'main' lo permite.
-       Por ejemplo, si 'main' tiene un max-width de 1200px, y cada item es ~300-350px,
-       3 columnas cabrán bien.
+       3 columnas en la mayoría de los escritorios si el ancho de 'main' lo permite.
+       Por ejemplo, si 'main' tiene un max-width de 1200px, y cada item es ~300-350px,
+       3 columnas cabrán bien.
     */
-}
-
-/* In styles/temples-large.css */
-
-/* Ensure hamburger is hidden on large screens */
-#hamburger-button {
-    display: none !important; 
-}
-
-/* Ensure nav ul is displayed as intended on large screens */
-header nav ul {
-    display: flex !important; /* Or your default display (e.g., block, inline-flex) */
-    flex-direction: row !important; /* Ensure it's horizontal */
-    position: static !important; /* Reset mobile positioning */
-    width: auto !important; /* Reset mobile width */
-    background-color: transparent !important; /* Reset mobile background */
-    box-shadow: none !important; /* Reset mobile shadow */
-}
-
-header nav ul li {
-    margin: 0 20px 0 0 !important; /* Restore original margins */
-}
-
-header nav ul li a {
-    padding: 0 !important; /* Reset padding if it was changed for mobile */
 }
