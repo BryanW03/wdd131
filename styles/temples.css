@@ -2,25 +2,23 @@
 
 /* --- Variables CSS --- */
 :root {
-    --primary-color: #4A0E65; /* Un morado oscuro para el tema principal */
-    --secondary-color: #F5F5F5; /* Un blanco hueso para el texto sobre el color primario */
-    --accent-color: #D48CF8; /* Un morado más claro para acentos y hovers */
-    --text-color-dark: #333333; /* Color de texto principal oscuro */
+    --primary-color: #333366; /* Azul oscuro elegante para el tema principal */
+    --secondary-color: #FFFFFF; /* Blanco para texto sobre el primario */
+    --accent-color: #6699CC; /* Azul más claro para acentos y hovers */
+    --text-color-dark: #222222; /* Color de texto principal oscuro */
     --text-color-light: #FFFFFF; /* Color de texto claro */
-    --body-bg-color: #F0EAF6; /* Un fondo muy claro, ligeramente morado */
-    --figure-bg-color: #FFFFFF; /* Fondo blanco para las tarjetas de templos */
-    --font-heading: 'Roboto Slab', serif; /* Fuente para encabezados */
-    --font-body: 'Open Sans', sans-serif; /* Fuente para el cuerpo del texto */
-    --nav-hover-bg: #6A1B9A; /* Morado más intenso para hover en navegación */
-    --link-color: #783F8E; /* Color para enlaces generales */
+    --figure-bg-color: #FFFFFF; /* Fondo blanco para las tarjetas de fotos, resaltando las imágenes */
+    --font-heading: 'Playfair Display', serif; /* Fuente elegante para encabezados */
+    --font-body: 'Merriweather', serif; /* Fuente legible y con estilo para el cuerpo del texto */
+    --nav-hover-bg: #5577AA; /* Azul un poco más claro para hover en navegación */
+    --link-color: #4477AA; /* Color para enlaces generales */
 }
-
 /* --- Estilos Generales --- */
 body {
     font-family: var(--font-body);
     margin: 0;
     padding: 0;
-    background-color: var(--body-bg-color);
+    background-image: linear-gradient(135deg, #6B7B8C 0%, #A3B0C3 50%, #4A5568 100%);
     color: var(--text-color-dark);
     line-height: 1.6;
 }
@@ -109,7 +107,8 @@ main > h1 { /* Título "Home" dentro de main */
     text-align: center;
     font-size: 2.2em;
     color: var(--primary-color);
-    /* El 'gap' del grid maneja el espaciado, así que los márgenes aquí son menos críticos para eso */
+   text-decoration: underline;
+  
 }
 
 /* --- Figuras (Figure elements) --- */
