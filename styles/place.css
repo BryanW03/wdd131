@@ -82,6 +82,18 @@ main {
     align-items: center;
 }
 
+/* --- ::after pseudo-element added here for demonstration --- */
+.card h2::after {
+    content: ''; /* Essential for pseudo-elements */
+    display: block; /* Or inline-block, etc. */
+    width: 30px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    margin-top: 5px; /* Adjust spacing as needed */
+    margin-left: 10px; /* Separates it from the text */
+}
+/* ------------------------------------------------------------- */
+
 .data-content p,
 .weather-content p {
     margin-bottom: 10px;
