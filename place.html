@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Title</title>
+    <meta name="description" content="Sample page about a specific place, showing data and weather.">
+    <meta name="author" content="Brayan De Leon">
+
+    <link rel="stylesheet" href="styles/place.css">
+    <script defer src="scripts/place.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Dominican Republic</h1>
+    </header>
+
+    <main>
+        <div class="hero">
+            <picture>
+                <source srcset="images/drplace.webp" media="(min-width: 1000px)">
+                <source srcset="images/drplace.webp" media="(min-width: 500px)">
+                <img src="images/drplace.webp" alt="Main image description of the place" width="500" height="250">
+            </picture>
+        </div>
+<section class="data-section card">
+    <h2>Data</h2>
+    <div class="data-content">
+        <p><span class="label">Area:</span> <span class="value">48,671 km²</span></p>
+        <p><span class="label">Population:</span> <span class="value">11,332,972 (2024 est.)</span></p>
+        <p><span class="label">Capital:</span> <span class="value">Santo Domingo</span></p>
+        <p><span class="label">Language:</span> <span class="value">Spanish</span></p>
+        <p><span class="label">Currency:</span> <span class="value">Dominican Peso (DOP)</span></p>
+        <p><span class="label">Time Zone:</span> <span class="value">Atlantic Standard Time (UTC−4)</span></p>
+    </div>
+</section>
+        </section>
+
+        <section class="weather-section card">
+            <h2>Weather <img src="images/667368_celcius_clouds_farenheit_sunshine_temerature_icon.svg" alt="Weather icon" class="weather-icon-svg"></h2>
+            <div class="weather-content">
+                <div class="weather-icon-container">
+                </div>
+                <p><span class="label">Temperature:</span> <span id="temperature" class="value">25°C</span> </p>
+                <p><span class="label">Conditions:</span> <span class="value">Sunny</span></p>
+                <p><span class="label">Wind:</span> <span id="windspeed" class="value">10 km/h</span> </p>
+                <p><span class="label">Wind Chill:</span> <span id="windchill" class="value">N/A</span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            &copy; <span id="currentyear"></span> 🦁Brayan De Leon🦁 ⚾DOMINICAN REPUBLIC⚾
+        </p>
+        <p id="lastModified"></p>
+
+    </footer>
+</body>
+</html>
