@@ -1,0 +1,233 @@
+:root {
+    --primary-color: #333366;
+    --secondary-color: #FFFFFF;
+    --accent-color: #6699CC;
+    --text-color-dark: #222222;
+    --text-color-light: #FFFFFF;
+    --figure-bg-color: #FFFFFF;
+    --font-heading: 'Playfair Display', serif;
+    --nav-hover-bg: #5577AA;
+    --link-color: #4477AA;
+    --hamburger-color: #FFFFFF;
+    /* Asegúrate de definir --font-body si lo usas en body */
+    --font-body: 'Open Sans', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(135deg, #6B7B8C 0%, #A3B0C3 50%, #4A5568 100%);
+    color: var(--text-color-dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header h1 {
+    color: var(--secondary-color);
+    margin: 0;
+    font-size: 1.8em;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+nav.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Hidden by default for mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav.main-nav ul.open {
+    display: flex; /* Display when open (for hamburger menu) */
+}
+
+nav.main-nav ul li {
+    margin: 0;
+    width: 100%;
+}
+
+nav.main-nav ul li a {
+    color: var(--secondary-color);
+    padding: 0.75rem 1rem;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+}
+
+nav.main-nav ul li a:hover {
+    background-color: var(--nav-hover-bg);
+    color: var(--text-color-light);
+    text-decoration: none;
+}
+
+main {
+    /* Quitamos display: grid y gap de main para que res-grid lo controle */
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+main > h2 {
+    text-align: center;
+    font-size: 2.2em;
+    color: var(--primary-color);
+    text-decoration: underline;
+    margin-bottom: 2rem; /* Espacio debajo del título "TEMPLE" */
+}
+
+/* --- ESTILOS PARA LAS TARJETAS DE TEMPLOS --- */
+.res-grid {
+    display: grid;
+    /* Crea columnas que se ajustan automáticamente, mínimo 300px, máximo 1fr (igual espacio) */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem; /* Espacio entre las tarjetas */
+    padding: 0.5rem; /* Pequeño padding alrededor de la cuadrícula */
+}
+
+.res-grid section {
+    background-color: var(--figure-bg-color); /* Fondo blanco para las tarjetas */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease; /* Transición para el efecto hover */
+}
+
+.res-grid section:hover {
+    transform: translateY(-5px); /* Levanta la tarjeta ligeramente al pasar el ratón */
+}
+
+.res-grid h3 {
+    color: var(--primary-color);
+    font-size: 1.6em; /* Un poco más grande para el nombre */
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase; /* Opcional: poner el nombre en mayúsculas */
+}
+
+.res-grid p {
+    color: var(--text-color-dark);
+    margin-bottom: 0.4rem;
+    font-size: 0.95em;
+}
+
+.res-grid p .Label {
+    font-weight: bold;
+    color: var(--accent-color); /* Color para las etiquetas (Location, Dedicated, Size) */
+    margin-right: 0.3em; /* Espacio entre la etiqueta y el valor */
+}
+
+.res-grid img {
+    border-radius: 4px;
+    margin-top: 1.2rem;
+    width: 100%;
+    height: 200px; /* Altura fija para las imágenes para consistencia */
+    object-fit: cover; /* Asegura que la imagen cubra el área, recortando si es necesario */
+    border: 1px solid #eee; /* Borde sutil para las imágenes */
+}
+
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+    font-size: 0.9em;
+}
+
+/* El botón de hamburguesa y la navegación en móvil */
+#hamburger-button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--hamburger-color);
+    cursor: pointer;
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    z-index: 100;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.6em;
+        margin-right: 40px;
+    }
+    /* Puedes ocultar el menú de navegación para pantallas más pequeñas si usas un botón de hamburguesa */
+    nav.main-nav ul {
+        display: none; /* Por defecto oculto en móviles */
+    }
+    nav.main-nav ul.open {
+        display: flex; /* Mostrar cuando se active el botón */
+    }
+}
+
+/* Media queries para pantallas más grandes, según tu `temples-large.css` */
+@media (min-width: 768px) {
+    /* Ajustes para el menú de navegación en pantallas de tablet y escritorio */
+    nav.main-nav ul {
+        display: flex; /* Mostrar siempre en pantallas más grandes */
+        position: static; /* Quitar posicionamiento absoluto */
+        flex-direction: row; /* Elementos en fila */
+        width: auto;
+        box-shadow: none;
+    }
+    nav.main-nav ul li a {
+        padding: 0.5rem 0.8rem;
+    }
+    #hamburger-button {
+        display: none; /* Ocultar el botón de hamburguesa en pantallas grandes */
+    }
+}
+
+@media (min-width: 1024px) {
+    .res-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas grandes */
+    }
+}
+
+footer p {
+    margin: 0.3rem 0;
+}
