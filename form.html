@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rubia Magdalena Francesco">
+    <meta name="description" content="Single-page product review form.">
+    
+    <title>Product Review Form</title>
+    
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Product Review</h1>
+    </header>
+
+    <main>
+        <form id="reviewForm" method="get" action="review.html">
+            <fieldset>
+                <legend>Product Details</legend>
+                <label for="productName">Product Name <span class="required-asterisk">*</span></label>
+                <select id="productName" name="productName" required>
+                    <option value="" disabled selected>Select a Product ...</option>
+                </select>
+                <label>Overall Rating <span class="required-asterisk">*</span></label>
+                <div class="rating-group">
+                    <input type="radio" id="star5" name="rating" value="5" required><label for="star5">★</label>
+                    <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                    <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                    <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                    <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+                </div>
+                <label for="installationDate">Date of Installation <span class="required-asterisk">*</span></label>
+                <input type="date" id="installationDate" name="installationDate" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Your Feedback</legend>
+                <label>Which features did you find useful?</label>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="durability" name="feature" value="durability"><label for="durability">Durability</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="easeOfUse" name="feature" value="ease-of-use"><label for="easeOfUse">Ease of Use</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="performance" name="feature" value="performance"><label for="performance">Performance</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="design" name="feature" value="design"><label for="design">Design</label>
+                </div>
+                <label for="writtenReview">Written Review (Optional)</label>
+                <textarea id="writtenReview" name="writtenReview" rows="5"></textarea>
+                <label for="userName">Your Name (Optional)</label>
+                <input type="text" id="userName" name="userName" pattern="[a-zA-Z\s\-']+" title="Please enter only letters, spaces, hyphens, or apostrophes.">
+            </fieldset>
+            <input type="submit" value="Post Review">
+        </form>
+
+        <div id="confirmationMessage" class="hidden">
+            <h1>Thank You! ✅</h1>
+            <p>Your review has been successfully submitted.</p>
+            <p>Total reviews you've submitted: <span id="reviewCount">0</span></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy;<span id="currentYear"></span> &bull; Rubia Magdalena Francesco &bull; Santo Domingo Este, Dominican Republic</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+
+    
+</body>
+</html>
