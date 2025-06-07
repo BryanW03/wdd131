@@ -1,0 +1,139 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans&display=swap');
+
+:root {
+    --primary-color: #0056b3;     /* Deep Blue */
+    --accent-color: #fd7e14;      /* Bright Orange */
+    --text-color: #333333;       /* Dark Grey */
+    --background-color: #f8f9fa; /* Light Grey */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    position: relative;
+    border-bottom: 5px solid var(--accent-color);
+}
+
+header h1 {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    height: 80px; /* Adjust as needed */
+    width: auto;
+    border-radius: 5px; /* Example styling */
+}
+
+main {
+    padding: 20px;
+    max-width: 960px;
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-family: 'Roboto', sans-serif;
+    color: var(--primary-color);
+    margin-top: 25px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+.color-box {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.primary-color { background-color: var(--primary-color); }
+.accent-color { background-color: var(--accent-color); }
+.text-color { background-color: var(--text-color); }
+.background-color { background-color: var(--background-color); }
+
+.wireframe-image-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.wireframe-img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+pre {
+    background-color: #eee;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: left;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    color: #555;
+    white-space: pre-wrap;       /* CSS3 */
+    white-space: -moz-pre-wrap;  /* Firefox */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* IE */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.9rem;
+    border-top: 5px solid var(--accent-color);
+}
