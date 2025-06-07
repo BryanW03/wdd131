@@ -1,14 +1,6 @@
-/* This is your styles/form.css file.
-    
-    IMPORTANT: Make sure you do NOT have any @import rules for Google Fonts here.
-    The Google Fonts are already linked correctly in your HTML using <link> tags.
 
-    You can add your CSS rules for styling your form here.
-*/
-
-/* Example CSS: */
 body {
-    font-family: 'Open Sans', sans-serif; /* Example: Using one of the fonts linked in HTML */
+    font-family: 'Open Sans', sans-serif; 
     margin: 20px;
     background-color: #f4f4f4;
     color: #333;
@@ -20,7 +12,7 @@ header {
 }
 
 h1 {
-    font-family: 'EB Garamond', serif; /* Example: Using another font linked in HTML */
+    font-family: 'EB Garamond', serif; 
     color: #0056b3;
 }
 
@@ -61,34 +53,34 @@ form textarea {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Ensures padding doesn't increase total width */
+    box-sizing: border-box; 
 }
 
 .rating-group {
     display: flex;
-    flex-direction: row-reverse; /* To make stars appear left-to-right when styled */
-    justify-content: flex-end; /* Align stars to the right for right-to-left layout */
+    flex-direction: row-reverse; 
+    justify-content: flex-end; 
     margin-bottom: 15px;
 }
 
 .rating-group input[type="radio"] {
-    display: none; /* Hide the actual radio buttons */
+    display: none; 
 }
 
 .rating-group label {
     cursor: pointer;
     font-size: 30px;
-    color: #ccc; /* Default star color */
+    color: #ccc; 
     margin-right: 5px;
 }
 
 .rating-group label:hover,
 .rating-group label:hover ~ label {
-    color: #ffc107; /* Hover color */
+    color: #ffc107; 
 }
 
 .rating-group input[type="radio"]:checked ~ label {
-    color: #ffc107; /* Checked color */
+    color: #ffc107; 
 }
 
 .checkbox-container {
@@ -100,7 +92,7 @@ form textarea {
 }
 
 textarea {
-    resize: vertical; /* Allow vertical resizing */
+    resize: vertical; 
 }
 
 .required-asterisk {
