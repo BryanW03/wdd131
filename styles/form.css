@@ -1,107 +1,151 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* This is your styles/form.css file.
+    
+    IMPORTANT: Make sure you do NOT have any @import rules for Google Fonts here.
+    The Google Fonts are already linked correctly in your HTML using <link> tags.
 
-:root {
-    --primary-color: #005f73;   /* Deep Teal */
-    --secondary-color: #e9f5f7; /* Very Light Teal */
-    --accent-color: #ffc300;    /* Gold/Yellow for stars */
-    --background-color: #f8f9fa;
-    --text-color: #212529;
-    --border-color: #ced4da;
-    --error-color: #d90429;
-}
+    You can add your CSS rules for styling your form here.
+*/
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
+/* Example CSS: */
 body {
-    font-family: 'Poppins', sans-serif;
-    font-family: "Open Sans", sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    padding: 1rem 0 0 0;
+    font-family: 'Open Sans', sans-serif; /* Example: Using one of the fonts linked in HTML */
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-header, footer {
-    width: 100%;
+header {
     text-align: center;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 1rem;
+    margin-bottom: 30px;
 }
 
-header { border-bottom: 5px solid var(--accent-color); }
-footer { margin-top: 2rem; padding-bottom: 1.5rem; font-size: 0.9em; }
+h1 {
+    font-family: 'EB Garamond', serif; /* Example: Using another font linked in HTML */
+    color: #0056b3;
+}
 
 main {
-    width: 100%;
-    max-width: 650px;
-    margin-top: 2rem;
-    padding: 2rem;
-    background-color: white;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-form { display: grid; gap: 1.5rem; }
-fieldset { border: 1px solid var(--border-color); border-radius: 5px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
-legend { font-weight: 600; color: var(--primary-color); padding: 0 0.5rem; }
-label { font-weight: 600; }
-.required-asterisk { color: var(--error-color); font-weight: bold; }
+form fieldset {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
 
-input[type="text"], input[type="date"], select, textarea {
+form legend {
+    font-weight: bold;
+    color: #0056b3;
+    padding: 0 10px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="date"],
+form select,
+form textarea {
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--border-color);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; /* Ensures padding doesn't increase total width */
 }
 
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 5px var(--secondary-color);
+.rating-group {
+    display: flex;
+    flex-direction: row-reverse; /* To make stars appear left-to-right when styled */
+    justify-content: flex-end; /* Align stars to the right for right-to-left layout */
+    margin-bottom: 15px;
 }
 
-.checkbox-container { display: flex; align-items: center; gap: 0.5rem; }
-input[type="checkbox"] { width: 1.25em; height: 1.25em; }
+.rating-group input[type="radio"] {
+    display: none; /* Hide the actual radio buttons */
+}
 
-.rating-group { display: flex; flex-direction: row-reverse; justify-content: flex-end; }
-.rating-group input[type="radio"] { display: none; }
-.rating-group label { font-size: 2.5rem; color: var(--border-color); cursor: pointer; transition: color 0.2s ease-in-out; }
-.rating-group input[type="radio"]:checked ~ label, .rating-group label:hover, .rating-group label:hover ~ label { color: var(--accent-color); }
+.rating-group label {
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc; /* Default star color */
+    margin-right: 5px;
+}
+
+.rating-group label:hover,
+.rating-group label:hover ~ label {
+    color: #ffc107; /* Hover color */
+}
+
+.rating-group input[type="radio"]:checked ~ label {
+    color: #ffc107; /* Checked color */
+}
+
+.checkbox-container {
+    margin-bottom: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.required-asterisk {
+    color: red;
+    margin-left: 2px;
+}
 
 input[type="submit"] {
-    background-color: var(--primary-color);
+    background-color: #007bff;
     color: white;
-    padding: 1rem;
+    padding: 12px 20px;
     border: none;
     border-radius: 4px;
-    font-size: 1.1rem;
-    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
+    font-size: 16px;
+    margin-top: 20px;
 }
 
-input[type="submit"]:hover { background-color: #004b5a; }
-input[type="submit"]:active { transform: scale(0.98); }
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
 
-/* NEW and IMPORTANT styles for single-page logic */
 .hidden {
     display: none;
 }
 
 #confirmationMessage {
     text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #28a745;
+    background-color: #d4edda;
+    color: #155724;
+    border-radius: 5px;
 }
+
 #confirmationMessage h1 {
-    color: var(--primary-color);
+    color: #28a745;
 }
-#confirmationMessage #reviewCount {
-    color: var(--primary-color);
-    font-weight: 600;
-    font-size: 1.2em;
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #777;
+    border-top: 1px solid #eee;
 }
