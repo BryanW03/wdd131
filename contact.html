@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact us for more information about meditation or to share your experience.">
+    <meta name="author" content="Brayan De Leon">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.webp" alt="Site Logo" loading="lazy">
+        </div>
+        <h1>Meditation & Wellness</h1>
+        <nav>
+            <button id="menu-button">☰</button>
+            <ul id="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="benefits.html">Benefits</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Contact Us</h2>
+        <p>Do you have a question or want to share your story? Please fill out the form.</p>
+        
+        <div id="form-message"></div>
+        
+        <form id="contact-form" method="get">
+            <label for="name">Full Name*</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address*</label>
+            <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+            
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+                <option value="general-inquiry">General Inquiry</option>
+                <option value="share-experience">Share Experience</option>
+                <option value="suggestion">Suggestion</option>
+            </select>
+
+            <label for="message">Your Message*</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <input type="checkbox" id="newsletter" name="newsletter">
+            <label for="newsletter">Subscribe to the monthly newsletter</label>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <section class="visit-counter">
+            <h3>Thank you for your interest!</h3>
+            <p>You have submitted this form <strong id="form-submission-counter">0</strong> times.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Brayan De Leon | WDD 131 Project</p>
+        <p><a href="references.html">References Page</a></p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>

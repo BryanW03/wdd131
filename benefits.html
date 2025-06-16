@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the multiple benefits of meditation, including stress reduction, improved focus, and emotional well-being.">
+    <meta name="author" content="Brayan De Leon">
+    <title>Benefits of Meditation</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.webp" alt="Site Logo" loading="lazy">
+        </div>
+        <h1>Meditation & Wellness</h1>
+        <nav>
+            <button id="menu-button">☰</button>
+            <ul id="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="benefits.html" class="active">Benefits</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Proven Benefits of Meditation</h2>
+        <p>The regular practice of meditation has a profound and positive impact on our mind and body. Below, you can filter and explore some of the key benefits.</p>
+        
+        <div class="filter-controls">
+            <label for="benefit-filter">Filter benefits by category:</label>
+            <select id="benefit-filter">
+                <option value="all">All</option>
+                <option value="mental">Mental Health</option>
+                <option value="emotional">Emotional Well-being</option>
+                <option value="physical">Physical Health</option>
+            </select>
+        </div>
+
+        <div id="benefits-container" class="benefits-grid">
+            </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Brayan De Leon | WDD 131 Project</p>
+        <p><a href="references.html">References Page</a></p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>
